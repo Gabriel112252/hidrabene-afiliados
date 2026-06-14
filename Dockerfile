@@ -17,6 +17,8 @@ COPY . .
 ENV RAILS_ENV=production
 ENV RAILS_SERVE_STATIC_FILES=true
 
+RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
+
 EXPOSE 3000
 
 CMD ["bash", "-c", "bundle exec rails db:migrate && bundle exec rails server -b 0.0.0.0 -p 3000"]
