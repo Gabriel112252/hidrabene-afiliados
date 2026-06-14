@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: hidrabene
+      POSTGRES_PASSWORD: hidrabene123
+      POSTGRES_DB: hidrabene_afiliados_development
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

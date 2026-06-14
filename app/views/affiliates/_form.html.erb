@@ -1,0 +1,87 @@
+<%= form_with(model: affiliate, class: "contents") do |form| %>
+  <% if affiliate.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
+      <h2><%= pluralize(affiliate.errors.count, "error") %> prohibited this affiliate from being saved:</h2>
+
+      <ul class="list-disc ml-6">
+        <% affiliate.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="my-5">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:name].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:name].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :cpf %>
+    <%= form.text_field :cpf, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:cpf].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:cpf].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :email %>
+    <%= form.text_field :email, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:email].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:email].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :whatsapp %>
+    <%= form.text_field :whatsapp, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:whatsapp].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:whatsapp].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :cep %>
+    <%= form.text_field :cep, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:cep].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:cep].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :street %>
+    <%= form.text_field :street, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:street].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:street].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :number %>
+    <%= form.text_field :number, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:number].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:number].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :complement %>
+    <%= form.text_field :complement, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:complement].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:complement].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :neighborhood %>
+    <%= form.text_field :neighborhood, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:neighborhood].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:neighborhood].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :city %>
+    <%= form.text_field :city, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:city].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:city].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :state %>
+    <%= form.text_field :state, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:state].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:state].any?}] %>
+  </div>
+
+  <div class="my-5 flex items-center gap-2">
+    <%= form.label :accepted_image_use %>
+    <%= form.check_box :accepted_image_use, class: ["block shadow-sm rounded-md border order-first h-5 w-5", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:accepted_image_use].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:accepted_image_use].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :accepted_at %>
+    <%= form.datetime_field :accepted_at, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:accepted_at].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:accepted_at].any?}] %>
+  </div>
+
+  <div class="my-5">
+    <%= form.label :signature_name %>
+    <%= form.text_field :signature_name, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": affiliate.errors[:signature_name].none?, "border-red-400 focus:outline-red-600": affiliate.errors[:signature_name].any?}] %>
+  </div>
+
+  <div class="inline">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  </div>
+<% end %>

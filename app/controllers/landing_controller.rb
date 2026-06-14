@@ -1,0 +1,26 @@
+class LandingController < ApplicationController
+  def index
+    @affiliate = Affiliate.new
+  end
+
+  def create
+    @affiliate = Affiliate.new(affiliate_params)
+    @affiliate.accepted_image_use = params.dig(:affiliate, :accepted_image_use) == '1'
+    @affiliate.accepted_at = Time.current if @affiliate.accepted_image_use
+
+    if @affiliate.save
+      redirect_to landing_success_path
+    else
+      render :index
+    end
+  end
+
+  def success
+  end
+
+  private
+
+  def affiliate_params
+    params.require(:affiliate).permit(:name, :cpf, :email, :whatsapp, :cep, :street, :number, :complement, :neighborhood, :city, :state, :signature_name)
+  end
+end
