@@ -20,6 +20,7 @@
       <%= form_with model: @affiliate, url: landing_create_path, local: true, html: {
         class: 'relative z-10 space-y-6',
         data: {
+          turbo: false,
           controller: 'form-validation',
           action: 'input->form-validation#validate change->form-validation#validate submit->form-validation#preventInvalidSubmit'
         }
