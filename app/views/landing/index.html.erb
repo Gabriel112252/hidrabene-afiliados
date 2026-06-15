@@ -128,14 +128,6 @@
           </div>
         </div>
 
-        <div>
-          <%= f.label :signature_name, 'Digite seu nome completo como assinatura eletrônica', class: 'block text-sm font-medium text-gray-700' %>
-          <%= f.text_field :signature_name,
-            placeholder: 'Digite seu nome completo',
-            data: { 'form-validation-target': 'signature' },
-            class: 'mt-1 block w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm' %>
-        </div>
-
         <div class="flex items-start space-x-3">
           <div class="flex items-center h-5">
             <%= f.check_box :accepted_image_use,
@@ -147,8 +139,10 @@
             "0" %>
           </div>
           <div class="text-sm">
-            <label class="font-medium text-gray-700">Autorização de uso de imagem</label>
-            <p class="text-gray-600">Autorizo a utilização da minha imagem, vídeos e conteúdos produzidos para divulgação da marca Hidrabene.</p>
+            <%= link_to 'Regulamento Programa de Afiliados + Termos de uso de imagem',
+              landing_regulamento_path,
+              target: '_blank',
+              class: 'font-medium text-[#d1477a] underline underline-offset-2 hover:opacity-75' %>
           </div>
         </div>
 

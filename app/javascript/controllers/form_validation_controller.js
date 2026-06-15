@@ -8,7 +8,6 @@ export default class extends Controller {
     "email",
     "emailError",
     "whatsapp",
-    "signature",
     "authorization",
     "submit"
   ]
@@ -45,7 +44,6 @@ export default class extends Controller {
       cpfValid &&
       emailValid &&
       this.whatsappTarget.value.trim() !== "" &&
-      this.signatureTarget.value.trim() !== "" &&
       this.authorizationTarget.checked
 
     this.submitTarget.disabled = !this.formValid
