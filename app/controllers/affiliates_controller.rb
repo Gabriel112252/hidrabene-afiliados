@@ -65,6 +65,6 @@ class AffiliatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def affiliate_params
-      params.require(:affiliate).permit(:name, :cpf, :email, :whatsapp, :cep, :street, :number, :complement, :neighborhood, :city, :state, :accepted_image_use, :accepted_at, :signature_name)
+      params.require(:affiliate).permit(:name, :cpf, :email, :whatsapp, :tiktok, :cep, :street, :number, :complement, :neighborhood, :city, :state, :accepted_image_use, :accepted_at, :signature_name)
     end
 end

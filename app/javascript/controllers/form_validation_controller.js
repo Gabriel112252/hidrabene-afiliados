@@ -8,6 +8,7 @@ export default class extends Controller {
     "email",
     "emailError",
     "whatsapp",
+    "tiktok",
     "authorization",
     "submit"
   ]
@@ -33,6 +34,11 @@ export default class extends Controller {
   }
 
   validate() {
+    const tiktokVal = this.tiktokTarget.value.trim()
+    if (tiktokVal && !tiktokVal.startsWith("@")) {
+      this.tiktokTarget.value = "@" + tiktokVal
+    }
+
     const cpfValid = this.validCpf(this.cpfTarget.value)
     const emailValid = this.validEmail(this.emailTarget.value)
 
@@ -44,6 +50,7 @@ export default class extends Controller {
       cpfValid &&
       emailValid &&
       this.whatsappTarget.value.trim() !== "" &&
+      this.tiktokTarget.value.trim() !== "" &&
       this.authorizationTarget.checked
 
     this.submitTarget.disabled = !this.formValid

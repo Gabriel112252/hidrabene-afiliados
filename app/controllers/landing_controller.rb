@@ -24,6 +24,6 @@ class LandingController < ApplicationController
   private
 
   def affiliate_params
-    params.require(:affiliate).permit(:name, :cpf, :email, :whatsapp, :cep, :street, :number, :complement, :neighborhood, :city, :state, :accepted_image_use)
+    params.require(:affiliate).permit(:name, :cpf, :email, :whatsapp, :tiktok, :cep, :street, :number, :complement, :neighborhood, :city, :state, :accepted_image_use)
   end
 end

@@ -81,6 +81,14 @@
               },
               class: 'mt-1 block w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm' %>
           </div>
+
+          <div>
+            <%= f.label :tiktok, 'TikTok', class: 'block text-sm font-medium text-gray-700' %>
+            <%= f.text_field :tiktok,
+              placeholder: '@seuusuario',
+              data: { 'form-validation-target': 'tiktok' },
+              class: 'mt-1 block w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 placeholder-gray-400 shadow-sm focus:outline-none focus:ring-2 focus:ring-[#d1477a]' %>
+          </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-4" data-controller="cep">
