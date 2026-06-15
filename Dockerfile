@@ -8,13 +8,15 @@ RUN apt-get update -qq && apt-get install -y \
 
 WORKDIR /app
 
+ENV RAILS_ENV=production
+ENV BUNDLE_WITHOUT=development:test
+
 COPY Gemfile Gemfile.lock ./
 
 RUN bundle install
 
 COPY . .
 
-ENV RAILS_ENV=production
 ENV RAILS_SERVE_STATIC_FILES=true
 
 RUN SECRET_KEY_BASE_DUMMY=1 bundle exec rails assets:precompile
