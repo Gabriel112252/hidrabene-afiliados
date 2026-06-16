@@ -20,6 +20,10 @@ dialog {
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
+  width: calc(100vw - 2rem);
+  max-width: 42rem;
+  max-height: 90vh;
+  max-height: 90dvh;
 }
 
 dialog::backdrop {
