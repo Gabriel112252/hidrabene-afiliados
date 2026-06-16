@@ -148,10 +148,11 @@
             "0" %>
           </div>
           <div class="text-sm">
-            <%= link_to 'Regulamento Programa de Afiliados + Termos de uso de imagem',
-              landing_regulamento_path,
-              target: '_blank',
-              class: 'font-medium text-[#d1477a] underline underline-offset-2 hover:opacity-75' %>
+            <button type="button"
+              onclick="document.getElementById('regulamento-modal').showModal()"
+              class="font-medium text-[#d1477a] underline underline-offset-2 hover:opacity-75 cursor-pointer">
+              Regulamento Programa de Afiliados + Termos de uso de imagem
+            </button>
           </div>
         </div>
 
@@ -166,3 +167,200 @@
 
   </div>
 </div>
+
+<dialog id="regulamento-modal" class="w-full max-w-2xl rounded-3xl border border-[rgba(209,71,122,0.14)] p-0 shadow-[0_18px_45px_rgba(82,41,57,0.12)] backdrop:bg-black/50 backdrop:backdrop-blur-sm open:flex open:flex-col" style="max-height: 90vh;">
+  <div class="flex items-center justify-between border-b border-[rgba(209,71,122,0.12)] px-6 py-4 sticky top-0 bg-white rounded-t-3xl z-10">
+    <div>
+      <h2 class="text-base font-extrabold text-[#d1477a]">Regulamento Programa de Afiliados</h2>
+      <p class="text-xs text-gray-400 mt-0.5">Última atualização: 01/02/2026</p>
+    </div>
+    <button type="button" onclick="document.getElementById('regulamento-modal').close()" class="rounded-full p-2 text-gray-400 hover:bg-[rgba(209,71,122,0.08)] hover:text-[#d1477a] transition-colors">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5">
+        <path d="M6.28 5.22a.75.75 0 0 0-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 1 0 1.06 1.06L10 11.06l3.72 3.72a.75.75 0 1 0 1.06-1.06L11.06 10l3.72-3.72a.75.75 0 0 0-1.06-1.06L10 8.94 6.28 5.22Z" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="overflow-y-auto px-6 py-6 flex-1" style="background: radial-gradient(circle at top left, rgba(209,71,122,0.07), rgba(255,255,255,0.96) 42%), linear-gradient(135deg, #fff4f8 0%, #fffafd 48%, #ffffff 100%);">
+    <div class="space-y-8 text-sm leading-relaxed text-gray-700">
+
+      <section>
+        <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">1. Objetivo</h3>
+        <p>O Programa de Afiliados TikTok Shop tem como objetivo escalar vendas, gerar prova social e consolidar presença da marca dentro do TikTok por meio de creators e afiliados, utilizando a estratégia de progressão por performance.</p>
+        <p class="mt-2">O programa é dividido em níveis, com benefícios, responsabilidades e metas claras.</p>
+      </section>
+
+      <section>
+        <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">2. Estrutura dos Níveis</h3>
+        <p class="mb-4">O programa é estruturado em níveis progressivos, pensados para incentivar performance, constância e crescimento de GMV.</p>
+        <div class="mb-3 rounded-2xl bg-[rgba(209,71,122,0.04)] p-5">
+          <h4 class="mb-2 font-bold text-gray-800">2.1 Afiliado Performance</h4>
+          <p class="mb-2">Ponto de entrada para qualquer creator ou afiliado que deseja começar a monetizar com a marca no TikTok Shop.</p>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Validar sua capacidade de venda e criação de conteúdo</li>
+            <li>Construir histórico de GMV e conversão</li>
+            <li>Participar de campanhas abertas e desafios</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-[rgba(209,71,122,0.04)] p-5">
+          <h4 class="mb-2 font-bold text-gray-800">2.2 Afiliados Elite</h4>
+          <p class="mb-2 font-semibold text-gray-800">O nível Elite é o topo do programa — grupo seleto, limitado e altamente desejado.</p>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Acesso a comissões mais altas</li>
+            <li>Recebimento de press kit exclusivo</li>
+            <li>Prioridade em campanhas, lançamentos e ativações</li>
+            <li>Acesso a grupo fechado, treinamentos e suporte direto</li>
+            <li>Reconhecimento público como creator parceiro da marca</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">3. Critérios de Entrada</h3>
+        <div class="mb-3 rounded-2xl bg-[rgba(209,71,122,0.04)] p-5">
+          <h4 class="mb-2 font-bold text-gray-800">3.1 Entrada como Afiliado</h4>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Conta ativa no TikTok</li>
+            <li>Conformidade com as diretrizes da plataforma</li>
+            <li>Conteúdo alinhado ao posicionamento da marca</li>
+            <li>Aprovação via TikTok Shop</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-[rgba(209,71,122,0.04)] p-5">
+          <h4 class="mb-2 font-bold text-gray-800">3.2 Afiliado Elite</h4>
+          <p class="mb-2">A entrada no nível Elite pode ocorrer por convite direto ou progressão por performance.</p>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Histórico de vendas comprovado no TikTok Shop</li>
+            <li>Conteúdo recorrente e alinhado à marca</li>
+            <li>Compromisso com entregas de conteúdo</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">4. Comissões</h3>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-2xl border border-[rgba(209,71,122,0.14)] p-5">
+            <p class="mb-2 font-bold text-gray-800">Afiliado Performance</p>
+            <ul class="space-y-1">
+              <li>Vendas orgânicas: <strong>15%</strong></li>
+              <li>Vendas com ADS: <strong>8%</strong></li>
+            </ul>
+          </div>
+          <div class="rounded-2xl border border-[rgba(209,71,122,0.30)] bg-[rgba(209,71,122,0.04)] p-5">
+            <p class="mb-2 font-bold text-[#d1477a]">Afiliado Elite</p>
+            <ul class="space-y-1">
+              <li>Vendas orgânicas: <strong>20%</strong></li>
+              <li>Vendas com ADS: <strong>10%</strong></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">5. Regras de Amostra e Press Kit</h3>
+        <div class="mb-3 rounded-2xl bg-[rgba(209,71,122,0.04)] p-5">
+          <h4 class="mb-2 font-bold text-gray-800">5.1 Afiliado Performance</h4>
+          <p>O Afiliado Performance <strong>não possui envio automático de amostras ou press kit</strong>. A marca poderá liberar envios pontuais apenas em campanhas específicas.</p>
+        </div>
+        <div class="rounded-2xl bg-[rgba(209,71,122,0.04)] p-5">
+          <h4 class="mb-2 font-bold text-gray-800">5.2 Afiliado Elite</h4>
+          <p class="mb-2">O envio do press kit é um benefício condicionado à performance e entregas.</p>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Conteúdo mínimo: 1 vídeo de unboxing + 3 vídeos de cada produto</li>
+            <li>Prazo: publicação em até <strong>7 dias corridos</strong> após recebimento</li>
+            <li><strong>Proibida revenda ou repasse dos produtos</strong></li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">6. Metas e Progressão</h3>
+        <p class="mb-4">A progressão é baseada em mérito comprovado, consistência e impacto real no GMV da marca.</p>
+        <div class="rounded-2xl bg-[rgba(209,71,122,0.04)] p-5">
+          <h4 class="mb-2 font-bold text-gray-800">Progressão para Elite</h4>
+          <ul class="ml-4 list-disc space-y-1">
+            <li>Crescimento contínuo de vendas</li>
+            <li>Conteúdo recorrente e alinhado ao posicionamento da marca</li>
+            <li>Baixa taxa de cancelamento</li>
+            <li>Avaliação em janelas mensais consecutivas com validação interna</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">7. Penalidades, Rebaixamento e Exclusão</h3>
+        <div class="mb-3 rounded-2xl bg-[rgba(209,71,122,0.04)] p-5">
+          <h4 class="mb-2 font-bold text-gray-800">7.1 Penalidades Leves</h4>
+          <p class="text-xs text-gray-500 mb-1">Atraso na entrega, uso incorreto de links, descumprimento leve de diretrizes</p>
+          <ul class="ml-4 list-disc space-y-1"><li>Advertência, solicitação de correção, perda temporária de benefícios</li></ul>
+        </div>
+        <div class="mb-3 rounded-2xl bg-[rgba(209,71,122,0.04)] p-5">
+          <h4 class="mb-2 font-bold text-gray-800">7.2 Penalidades Graves</h4>
+          <p class="text-xs text-gray-500 mb-1">Não publicação de conteúdos obrigatórios, promessas médicas, revenda de produtos</p>
+          <ul class="ml-4 list-disc space-y-1"><li>Rebaixamento imediato, redução/bloqueio de comissões, suspensão de envios</li></ul>
+        </div>
+        <div class="rounded-2xl border border-red-100 bg-red-50 p-5">
+          <h4 class="mb-2 font-bold text-red-700">7.3 Fraudes e Má-fé</h4>
+          <p class="text-red-700">Compras falsas, manipulação de GMV, uso de bots: <strong>Exclusão imediata e definitiva do programa</strong>.</p>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">8. Regras de Conteúdo e Comunicação</h3>
+        <div class="mb-3 rounded-2xl bg-red-50 p-5">
+          <p class="mb-2 font-semibold text-red-700">É expressamente proibido:</p>
+          <ul class="ml-4 list-disc space-y-1 text-red-700">
+            <li>Prometer cura, tratamento médico ou resultados garantidos</li>
+            <li>Utilizar linguagem clínica ou médica</li>
+            <li>Fazer comparações depreciativas com concorrentes</li>
+            <li>Divulgar informações internas ou confidenciais do programa</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl bg-green-50 p-5">
+          <p class="mb-2 font-semibold text-green-700">É obrigatório:</p>
+          <ul class="ml-4 list-disc space-y-1 text-green-700">
+            <li>Linguagem realista, experiencial e transparente</li>
+            <li>Uso correto dos produtos</li>
+            <li>Cumprimento das políticas do TikTok Shop</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">9. Direitos e Reservas da Marca</h3>
+        <ul class="ml-4 list-disc space-y-1">
+          <li>Alterar este regulamento a qualquer momento</li>
+          <li>Ajustar comissões, metas e critérios</li>
+          <li>Encerrar parcerias sem aviso prévio em caso de descumprimento</li>
+          <li>Utilizar conteúdos produzidos pelos afiliados para fins institucionais e promocionais</li>
+        </ul>
+        <p class="mt-3 font-semibold text-gray-700">Nenhum nível, benefício ou comissão é considerado direito adquirido.</p>
+      </section>
+
+      <section>
+        <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">10. Confidencialidade</h3>
+        <p>Informações estratégicas, critérios internos e benefícios exclusivos são confidenciais. É proibida a divulgação de condições comerciais especiais e estratégias internas.</p>
+      </section>
+
+      <section class="rounded-2xl border border-[rgba(209,71,122,0.20)] bg-[rgba(209,71,122,0.04)] p-5">
+        <h3 class="mb-3 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">11. Termo de Uso de Imagem</h3>
+        <p class="mb-3">Ao se cadastrar no Programa de Afiliados Hidrabene, a afiliada autoriza, de forma expressa, gratuita e sem limitação territorial, a utilização da sua imagem, voz, vídeos, fotos e demais conteúdos audiovisuais produzidos no contexto da parceria com a marca Hidrabene.</p>
+        <p class="mb-3">Esta autorização abrange a divulgação, reprodução, edição e veiculação dos conteúdos em qualquer mídia ou plataforma digital — incluindo TikTok, Instagram, YouTube e outros canais institucionais da marca — para fins de publicidade e promoção dos produtos Hidrabene.</p>
+        <p class="font-medium text-gray-800">A participação no programa implica na aceitação integral deste Termo de Uso de Imagem, que permanece vigente durante toda a parceria e, no que se refere a conteúdos já publicados, após o eventual encerramento da mesma.</p>
+      </section>
+
+      <section class="rounded-2xl bg-gray-50 p-5">
+        <h3 class="mb-2 text-sm font-extrabold uppercase tracking-wide text-[#d1477a]">12. Aceite</h3>
+        <p>A participação no Programa de Afiliados implica na <strong>aceitação integral, irrestrita e automática</strong> deste regulamento.</p>
+      </section>
+
+    </div>
+  </div>
+
+  <div class="border-t border-[rgba(209,71,122,0.12)] px-6 py-4 sticky bottom-0 bg-white rounded-b-3xl">
+    <button type="button" onclick="document.getElementById('regulamento-modal').close()" class="w-full inline-flex items-center justify-center rounded-2xl bg-[#d1477a] px-6 py-3 text-sm font-semibold text-white shadow-md hover:bg-[#c03d6e] transition-colors">
+      Fechar
+    </button>
+  </div>
+</dialog>

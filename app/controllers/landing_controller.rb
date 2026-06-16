@@ -9,7 +9,7 @@ class LandingController < ApplicationController
     @affiliate.accepted_at = Time.current if @affiliate.accepted_image_use
 
     if @affiliate.save
-      redirect_to landing_success_path
+      redirect_to "https://hidrabene-afiliadaselite.com/", allow_other_host: true
     else
       render :index
     end

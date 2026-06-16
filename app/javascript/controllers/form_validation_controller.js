@@ -30,7 +30,65 @@ export default class extends Controller {
   preventInvalidSubmit(event) {
     this.validate()
 
-    if (!this.formValid) event.preventDefault()
+    if (!this.formValid) {
+      event.preventDefault()
+      return
+    }
+
+    event.preventDefault()
+    this.showSuccess()
+    setTimeout(() => { this.element.submit() }, 2000)
+  }
+
+  showSuccess() {
+    const style = document.createElement("style")
+    style.textContent = `
+      @keyframes hb-fadeIn { from { opacity: 0 } to { opacity: 1 } }
+      @keyframes hb-scaleIn { from { transform: scale(0.6); opacity: 0 } to { transform: scale(1); opacity: 1 } }
+      @keyframes hb-checkDraw {
+        from { stroke-dashoffset: 48 }
+        to   { stroke-dashoffset: 0  }
+      }
+      @keyframes hb-spin { to { transform: rotate(360deg) } }
+    `
+    document.head.appendChild(style)
+
+    const overlay = document.createElement("div")
+    overlay.style.cssText = [
+      "position:fixed", "inset:0", "z-index:9999",
+      "display:flex", "flex-direction:column", "align-items:center", "justify-content:center",
+      "background:rgba(255,247,250,0.97)",
+      "animation:hb-fadeIn 0.35s ease both"
+    ].join(";")
+
+    overlay.innerHTML = `
+      <div style="text-align:center;padding:2rem;animation:hb-scaleIn 0.4s cubic-bezier(.34,1.56,.64,1) 0.1s both">
+        <div style="
+          width:80px;height:80px;border-radius:50%;
+          background:linear-gradient(135deg,#f472a8,#d1477a);
+          display:flex;align-items:center;justify-content:center;
+          margin:0 auto 1.25rem;
+          box-shadow:0 8px 24px rgba(209,71,122,0.35)
+        ">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" width="40" height="40">
+            <polyline points="8,21 16,30 32,12"
+              stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"
+              stroke-dasharray="48" stroke-dashoffset="48"
+              style="animation:hb-checkDraw 0.45s ease 0.35s forwards"/>
+          </svg>
+        </div>
+        <p style="font-size:1.2rem;font-weight:800;color:#d1477a;margin-bottom:0.4rem">Cadastro realizado!</p>
+        <p style="font-size:0.875rem;color:#9ca3af;margin-bottom:1.5rem">Você será redirecionada em instantes...</p>
+        <div style="
+          width:28px;height:28px;border:3px solid rgba(209,71,122,0.2);
+          border-top-color:#d1477a;border-radius:50%;
+          margin:0 auto;
+          animation:hb-spin 0.8s linear infinite
+        "></div>
+      </div>
+    `
+
+    document.body.appendChild(overlay)
   }
 
   validate() {
