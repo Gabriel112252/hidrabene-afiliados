@@ -24,8 +24,10 @@ dialog[open] {
   margin: 0;
   width: calc(100vw - 2rem);
   max-width: 42rem;
-  max-height: 90vh;
-  max-height: 90dvh;
+  height: 85vh;
+  height: 85dvh;
+  max-height: 85vh;
+  max-height: 85dvh;
 }
 
 dialog::backdrop {
