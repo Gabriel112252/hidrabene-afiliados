@@ -9,9 +9,4 @@ class Admin::ApplicationController < ApplicationController
       redirect_to admin_login_path, alert: "Faça login para continuar."
     end
   end
-
-  def current_admin
-    @current_admin ||= AdminUser.find_by(id: session[:admin_user_id])
-  end
-  helper_method :current_admin
 end
