@@ -1,0 +1,49 @@
+<div class="flex items-center justify-between mb-6">
+  <div>
+    <h1 class="text-xl font-extrabold text-[#d1477a]">Afiliadas Cadastradas</h1>
+    <p class="text-sm text-gray-500 mt-0.5"><%= @affiliates.count %> cadastro(s)</p>
+  </div>
+</div>
+
+<div class="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
+  <div class="overflow-x-auto">
+    <table class="w-full text-sm">
+      <thead>
+        <tr class="border-b border-gray-100 bg-gray-50 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">
+          <th class="px-4 py-3">#</th>
+          <th class="px-4 py-3">Nome</th>
+          <th class="px-4 py-3">E-mail</th>
+          <th class="px-4 py-3">WhatsApp</th>
+          <th class="px-4 py-3">TikTok</th>
+          <th class="px-4 py-3">Cidade/UF</th>
+          <th class="px-4 py-3">Cadastro</th>
+          <th class="px-4 py-3"></th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100">
+        <% @affiliates.each do |a| %>
+          <tr class="hover:bg-gray-50 transition-colors">
+            <td class="px-4 py-3 text-gray-400"><%= a.id %></td>
+            <td class="px-4 py-3 font-medium text-gray-900"><%= a.name %></td>
+            <td class="px-4 py-3 text-gray-600"><%= a.email %></td>
+            <td class="px-4 py-3 text-gray-600"><%= a.whatsapp %></td>
+            <td class="px-4 py-3 text-gray-600"><%= a.tiktok %></td>
+            <td class="px-4 py-3 text-gray-600"><%= [a.city, a.state].compact.join("/") %></td>
+            <td class="px-4 py-3 text-gray-400 whitespace-nowrap"><%= a.created_at.strftime("%d/%m/%Y %H:%M") %></td>
+            <td class="px-4 py-3">
+              <%= link_to "Ver", admin_affiliate_path(a),
+                class: "text-xs font-medium text-[#d1477a] hover:underline mr-2" %>
+              <%= link_to "Editar", edit_admin_affiliate_path(a),
+                class: "text-xs font-medium text-gray-500 hover:underline" %>
+            </td>
+          </tr>
+        <% end %>
+        <% if @affiliates.empty? %>
+          <tr>
+            <td colspan="8" class="px-4 py-10 text-center text-gray-400">Nenhuma afiliada cadastrada ainda.</td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>

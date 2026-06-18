@@ -1,0 +1,33 @@
+<div class="mb-6 flex items-center gap-3">
+  <%= link_to "← Voltar", admin_affiliates_path, class: "text-sm text-[#d1477a] hover:opacity-75" %>
+  <%= link_to "Editar", edit_admin_affiliate_path(@affiliate),
+    class: "ml-auto text-sm font-semibold text-white bg-[#d1477a] px-4 py-2 rounded-xl hover:bg-[#c03d6e] transition-colors" %>
+</div>
+
+<div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
+  <h1 class="text-lg font-extrabold text-[#d1477a] mb-6"><%= @affiliate.name %></h1>
+
+  <dl class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-5 text-sm">
+    <% {
+      "CPF" => @affiliate.cpf,
+      "E-mail" => @affiliate.email,
+      "WhatsApp" => @affiliate.whatsapp,
+      "TikTok" => @affiliate.tiktok,
+      "CEP" => @affiliate.cep,
+      "Rua" => @affiliate.street,
+      "Número" => @affiliate.number,
+      "Complemento" => @affiliate.complement,
+      "Bairro" => @affiliate.neighborhood,
+      "Cidade" => @affiliate.city,
+      "Estado" => @affiliate.state,
+      "Aceitou termos" => (@affiliate.accepted_image_use ? "Sim" : "Não"),
+      "Aceite em" => @affiliate.accepted_at&.strftime("%d/%m/%Y %H:%M"),
+      "Cadastro" => @affiliate.created_at.strftime("%d/%m/%Y %H:%M"),
+    }.each do |label, value| %>
+      <div>
+        <dt class="text-xs font-semibold uppercase tracking-wide text-gray-400"><%= label %></dt>
+        <dd class="mt-1 text-gray-800"><%= value.presence || "—" %></dd>
+      </div>
+    <% end %>
+  </dl>
+</div>
