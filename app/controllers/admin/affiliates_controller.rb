@@ -1,5 +1,5 @@
 class Admin::AffiliatesController < Admin::ApplicationController
-  before_action :set_affiliate, only: [:show, :edit, :update]
+  before_action :set_affiliate, only: [:show, :edit, :update, :acceptance_pdf]
 
   def index
     @affiliates = Affiliate.order(created_at: :desc)
@@ -17,6 +17,13 @@ class Admin::AffiliatesController < Admin::ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
+  end
+
+  def acceptance_pdf
+    send_data AffiliateAcceptancePdf.new(@affiliate).render,
+      filename: "comprovante_aceite_hidrabene_#{@affiliate.id}.pdf",
+      type: "application/pdf",
+      disposition: "attachment"
   end
 
   private
