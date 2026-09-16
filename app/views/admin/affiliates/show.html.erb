@@ -1,7 +1,17 @@
 <div class="mb-6 flex items-center gap-3">
   <%= link_to "← Voltar", admin_affiliates_path, class: "text-sm text-[#d1477a] hover:opacity-75" %>
-  <%= link_to "Editar", edit_admin_affiliate_path(@affiliate),
-    class: "ml-auto text-sm font-semibold text-white bg-[#d1477a] px-4 py-2 rounded-xl hover:bg-[#c03d6e] transition-colors" %>
+
+  <div class="ml-auto flex items-center gap-2">
+    <% if @affiliate.accepted_image_use? %>
+      <%= link_to "Baixar comprovante PDF", acceptance_pdf_admin_affiliate_path(@affiliate),
+        class: "text-sm font-semibold text-[#d1477a] border border-[#d1477a] px-4 py-2 rounded-xl hover:bg-[#fff5f9] transition-colors" %>
+    <% else %>
+      <span class="text-sm font-medium text-gray-400 border border-gray-200 px-4 py-2 rounded-xl">Sem aceite registrado</span>
+    <% end %>
+
+    <%= link_to "Editar", edit_admin_affiliate_path(@affiliate),
+      class: "text-sm font-semibold text-white bg-[#d1477a] px-4 py-2 rounded-xl hover:bg-[#c03d6e] transition-colors" %>
+  </div>
 </div>
 
 <div class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
